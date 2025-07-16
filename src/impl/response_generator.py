@@ -1,6 +1,6 @@
 from typing import List
-from interface.base_response_generator import BaseResponseGenerator
-from util.invoke_ai import invoke_ai
+from src.interface.base_response_generator import BaseResponseGenerator
+from src.util.invoke_ai import invoke_ai
 
 
 SYSTEM_PROMPT = """

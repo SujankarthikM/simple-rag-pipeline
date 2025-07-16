@@ -1,6 +1,6 @@
-from interface.base_evaluator import BaseEvaluator, EvaluationResult
-from util.invoke_ai import invoke_ai
-from util.extract_xml import extract_xml_tag
+from src.interface.base_evaluator import BaseEvaluator, EvaluationResult
+from src.util.invoke_ai import invoke_ai
+from src.util.extract_xml import extract_xml_tag
 
 SYSTEM_PROMPT = """
 You are a system that evaluates the correctness of a response to a question.

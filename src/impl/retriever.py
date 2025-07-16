@@ -1,5 +1,5 @@
-from interface.base_datastore import BaseDatastore
-from interface.base_retriever import BaseRetriever
+from src.interface.base_datastore import BaseDatastore
+from src.interface.base_retriever import BaseRetriever
 import cohere
 
 

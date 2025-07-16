@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from interface.base_datastore import DataItem
+from src.interface.base_datastore import DataItem
 
 
 class BaseIndexer(ABC):
