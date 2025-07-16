@@ -1,7 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from typing import Dict, List, Optional
-from interface import (
+from src.interface import (
     BaseDatastore,
     BaseIndexer,
     BaseRetriever,

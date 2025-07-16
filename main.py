@@ -2,10 +2,10 @@ import glob
 import json
 import os
 from typing import List
-from rag_pipeline import RAGPipeline
+from src.rag_pipeline import RAGPipeline
 from create_parser import create_parser
 
-from impl import Datastore, Indexer, Retriever, ResponseGenerator, Evaluator
+from src.impl import Datastore, Indexer, Retriever, ResponseGenerator, Evaluator
 
 
 DEFAULT_SOURCE_PATH = "sample_data/source/"

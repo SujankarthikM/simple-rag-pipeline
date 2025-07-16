@@ -1,7 +1,7 @@
 import os
 from typing import List
-from interface.base_datastore import DataItem
-from interface.base_indexer import BaseIndexer
+from src.interface.base_datastore import DataItem
+from src.interface.base_indexer import BaseIndexer
 from docling.document_converter import DocumentConverter
 from docling.chunking import HybridChunker, DocChunk
 
