@@ -5,6 +5,7 @@ from lancedb.table import Table
 import pyarrow as pa
 from openai import OpenAI
 from concurrent.futures import ThreadPoolExecutor
+from src.util.embeddings import LocalEmbeddings
 
 
 class Datastore(BaseDatastore):
@@ -13,7 +14,8 @@ class Datastore(BaseDatastore):
     DB_TABLE_NAME = "rag-table"
 
     def __init__(self):
-        self.vector_dimensions = 1536
+        self.embeddings = LocalEmbeddings()
+        self.vector_dimensions = self.embeddings.vector_dimensions
         self.open_ai_client = OpenAI()
         self.vector_db = lancedb.connect(self.DB_PATH)
         self.table: Table = self._get_table()
@@ -40,13 +42,7 @@ class Datastore(BaseDatastore):
         return self.table
 
     def get_vector(self, content: str) -> List[float]:
-        response = self.open_ai_client.embeddings.create(
-            input=content,
-            model="text-embedding-3-small",
-            dimensions=self.vector_dimensions,
-        )
-        embeddings = response.data[0].embedding
-        return embeddings
+        return self.embeddings.get_embedding(content)
 
     def add_items(self, items: List[DataItem]) -> None:
 

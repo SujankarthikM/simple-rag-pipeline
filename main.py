@@ -2,6 +2,9 @@ import glob
 import json
 import os
 from typing import List
+from dotenv import load_dotenv
+
+load_dotenv()
 from src.rag_pipeline import RAGPipeline
 from create_parser import create_parser
 
